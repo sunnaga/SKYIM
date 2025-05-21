@@ -1,0 +1,139 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: kanit;
+}
+
+body {
+    position: relative;
+    min-height: 100vh;
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5rem;
+
+    a {
+        font-size: 25px;
+        color: white;
+    }
+}
+
+.text-container {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    overflow-y: scroll;
+    height: 650px;
+
+    p {
+        border-radius: 25px;
+        padding: .5rem 2rem;
+        background-color: lightgray;
+        background-size: contain;
+    }
+}
+
+footer {
+    form {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        display: grid;
+        grid-template-columns: 7fr 1fr;
+        gap: 10px;
+        padding: 10px 5px;
+
+
+
+
+        input {
+            font-size: 30px;
+            border-radius: 50px;
+            border: none;
+            outline: 2px solid black;
+            padding: 0 10px;
+            min-width: 150px;
+        }
+
+        button {
+            /* font-size: calc(50px+100vw); */
+            border-radius: 50px;
+            outline: 2px solid black;
+            border: none;
+            color: white;
+            background-color: black;
+            min-width: 50px;
+
+            &:hover {
+                background-color: white;
+                color: black;
+            }
+        }
+    }
+}
+
+
+
+@media screen and (max-width:1200px) {
+    nav {
+        padding: 1rem 5rem;
+    }
+
+}
+
+@media screen and (max-width:850px) {
+    nav {
+        padding: 1rem 3rem;
+    }
+}
+
+@media screen and (max-width:650px) {
+    nav {
+        padding: 1rem 2rem;
+
+        h1 {
+            font-size: 20px;
+        }
+    }
+
+    footer {
+        input {
+            font-size: 20px;
+        }
+    }
+}
+
+@media screen and (max-width:500px) {
+    nav {
+        padding: 1rem 1rem;
+
+        h1 {
+            font-size: 15px;
+        }
+    }
+}
+
+@media screen and (max-width:400px) {
+    nav {
+        padding: 1rem 1rem;
+
+        a {
+            font-size: 15px;
+        }
+
+        h1 {
+            font-size: 13px;
+        }
+    }
+}

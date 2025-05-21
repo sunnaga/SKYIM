@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/history.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+<body>
+    <nav>
+
+        <div class="logo"><a href="/"><img src="/img/logo.png" alt=""></a></div>
+
+        <ul>
+            <li><a class="hi" href="/schedule">หน้าแรก</a></li>
+            <li><a class="hi" href="/area">5 ส.</a></li>
+            <li><a class="hi" href="/roomone">ตรวจห้องเช้า</a></li>
+            <li><a class="hi" href="/roomtwo">ตรวจห้องเย็น</a></li>
+            <li><a class="hi" style="background-color: white; color: black;" href="/history">ประวัติ</a></li>
+        </ul>
+
+    </nav>
+
+    <div class="container">
+        <h1>ประวัติ</h1>
+
+        <div class="item-container">
+            <% let set = new Set() %>
+            <% let Alreadyset = new Set() %>
+            <% let scheduleset = new Set() %>
+            
+
+            <% data.forEach((d) => { %>  
+                <% set.add(d.date) %>  
+            <% }) %>
+
+            <% let counter = 0 %>
+
+            <% set.forEach((s) => { %>  
+            
+                <div class="result-container">
+                
+                <p class="date"><span><%= s %></span><i class="bi bi-chevron-down"></i></p>
+
+                <div class="display hidden">
+                    <h3 class="title">ตรวจ 5 ส.</h3>
+                    <% data.forEach((d) => {%>
+                        <% if(d.date == s && d.source_table == 'schedule') {%>
+                            <%if(d.pass=='ผ่าน'){%>
+                                <p class="pass"><%= d.room %> <%= d.pass %><%= d.title %></p>
+                            <%}%>
+                            <%if(d.pass=='ไม่ผ่าน'){%>
+                                <p class="notpass"><%= d.room %> <%= d.pass %><%= d.title %></p>
+                            <%}%>
+                        <% } %>
+                    <% }); %>
+                <h3 class="title">ตรวจ ห้องเช้า</h3>
+                    <% data.forEach((d) => {%>
+                        <% if(d.date == s && d.source_table == 'schedule2') {%>
+                            <%if(d.pass=='ผ่าน'){%>
+                                <p class="pass"><%= d.room %> <%= d.pass %><%= d.title %></p>
+                            <%}%>
+                            <%if(d.pass=='ไม่ผ่าน'){%>
+                                <p class="notpass"><%= d.room %> <%= d.pass %><%= d.title %></p>
+                            <%}%>
+                        <% } %>
+                    <% }); %>
+                <h3 class="title">ตรวจ ห้องเย็น</h3>
+                    <% data.forEach((d) => {%>
+                        <% if(d.date == s && d.source_table == 'schedule3') {%>
+                            <%if(d.pass=='ผ่าน'){%>
+                                <p class="pass"><%= d.room %> <%= d.pass %><%= d.title %></p>
+                            <%}%>
+                            <%if(d.pass=='ไม่ผ่าน'){%>
+                                <p class="notpass"><%= d.room %> <%= d.pass %><%= d.title %></p>
+                            <%}%>
+                        <% } %>
+                    <% }); %>
+                </div>
+                
+                </div>
+            <% }) %>
+        </div>
+    </div>
+</body>
+    <script>
+
+        const results = document.querySelectorAll('.result-container')
+        
+
+        function toggleDisplay(){
+            results.forEach((result)=>{
+                const display = result.querySelector('.display')
+                result.addEventListener('click',()=>{
+                    display.classList.toggle('hidden')
+                })
+            })
+
+        }
+
+        toggleDisplay()
+    </script>
+
+</html>

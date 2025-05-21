@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>welcome</title>
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+
+<body>
+
+    <nav>
+
+        <div class="logo"><a href="/"><img src="/img/logo.png" alt=""></a></div>
+        
+        <div class="user">
+            <p>สวัสดี <b><%=role%></b> เพจทรายขาวเยิ้ม  </p>
+            <a href="/logout" class="logout" style="display: none;">ออกจากระบบ</a>
+        </div>
+
+    </nav>
+
+    <div class="container">
+        <div class="link">
+            <a href="/schedule">
+                <i class="bi bi-clipboard-check"></i>
+                <p>ตรวจเวร</p>
+            </a>
+            <a href="/admin">
+                <i class="bi bi-person-fill-check"></i>
+                <div>สำหรับ Admin</div>
+            </a>
+            <a href="/gossip">
+                <i class="bi bi-chat-left-dots-fill"></i>
+                <div>ซ่องซุบซิบ</div>
+            </a>
+        </div>
+
+    </div>
+
+</body>
+
+</html>

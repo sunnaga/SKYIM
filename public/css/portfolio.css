@@ -1,0 +1,39 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: kanit;
+}
+
+body{
+    background-color: #CBBA9E;
+}
+
+.container{
+    text-align: center;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    max-width: 700px;
+
+    .vid-con{
+        /* max-width: 500px;s */
+        margin-bottom: 100px;
+        /* margin: 0 100px auto auto; */
+    }
+
+    iframe{
+        margin: 0 auto;
+        width: 100%;
+        background-color: #112822;
+        padding: 1rem;
+        margin: 1rem;
+    }
+
+    p{
+        text-indent: 50px;
+        font-size: 30px;
+        text-align: start;
+        margin-bottom: 500px;
+    }
+}
