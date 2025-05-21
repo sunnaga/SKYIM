@@ -80,7 +80,7 @@ app.get('/roomone', (req, res) => {
 })
 
 app.get('/roomtwo', (req, res) => {
-    const sql = "SELECT * FROM ORDER BY room ASC"
+    const sql = "SELECT * FROM schedule ORDER BY room ASC"
 
     db.query(sql, (err, result) => {
         res.render('roomtwo',
